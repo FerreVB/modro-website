@@ -268,8 +268,9 @@ export default function Home() {
 
         <div className="text-sm leading-7 text-neutral-400">
           <p>Regio Antwerpen / Hove</p>
-          <p>ferre.vanbaelen@gmail.com</p>
+          <p>info@modrodesign.be</p>
           <p>+32 471 05 71 01</p>
+          <p>BE1039.665.202</p>
         </div>
       </footer>
     </main>
