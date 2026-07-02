@@ -40,12 +40,15 @@ const steps = [
 ];
 
 const projects = [
-  "Technisch prototype",
-  "Functioneel onderdeel",
-  "Gepersonaliseerd object",
-  "Productaccessoire",
-  "Behuizing",
-  "Display of houder",
+  {
+    title: "Houtbewerkers kit",
+    category: "3D-print productie / Houtbewerking",
+    description:
+      "3D-geprinte toolset voor recreatieve houtbewerkers, bestaande uit een ergonomische schuurblokhouder, een lijmroller en paint pyramids voor het afwerken van houten onderdelen. Modro Design verzorgde de printproductie en afwerking op basis van publiek beschikbare ontwerpen.",
+    material: "PLA en translucent PLA",
+    image: "/projects/houtbewerkers-kit/main.jpeg",
+    role: "Printproductie, materiaalkeuze en basisafwerking",
+  },
 ];
 
 export default function Home() {
@@ -214,24 +217,63 @@ export default function Home() {
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-neutral-500">
               Projecten
             </p>
-            <h2 className="mt-4 text-4xl font-bold">
-              Voorbeelden van mogelijke toepassingen.
+            <h2 className="mt-4 max-w-2xl text-4xl font-bold">
+              Echte projecten, tastbare resultaten.
             </h2>
           </div>
           <p className="max-w-xl text-neutral-400">
-            Binnenkort worden hier echte Modro-projecten toegevoegd. Voorlopig
-            tonen we de types opdrachten waarvoor je een aanvraag kunt doen.
+            Een selectie van onderdelen, prototypes en maatwerkprojecten die via
+            Modro Design werden geprint, voorbereid of geproduceerd.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <div className="mt-12 grid gap-8">
           {projects.map((project) => (
-            <div
-              key={project}
-              className="flex aspect-[4/3] items-end rounded-2xl border border-neutral-800 bg-neutral-900 p-6"
+            <article
+              key={project.title}
+              className="overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-900 md:grid md:grid-cols-2"
             >
-              <h3 className="text-xl font-semibold">{project}</h3>
-            </div>
+              <div className="aspect-[4/3] overflow-hidden bg-neutral-800">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-full w-full object-cover object-[center_60%] transition duration-500 hover:scale-105"
+                />
+              </div>
+
+              <div className="flex flex-col justify-between p-6 md:p-10">
+                <div>
+                  <p className="text-sm font-semibold uppercase tracking-[0.25em] text-neutral-500">
+                    {project.category}
+                  </p>
+
+                  <h3 className="mt-4 text-3xl font-bold">{project.title}</h3>
+
+                  <p className="mt-5 leading-8 text-neutral-400">
+                    {project.description}
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap gap-3 text-sm">
+                    <span className="rounded-full border border-neutral-700 px-4 py-2 text-neutral-300">
+                      Materiaal: {project.material}
+                    </span>
+                    <span className="rounded-full border border-neutral-700 px-4 py-2 text-neutral-300">
+                      FDM 3D-printing
+                    </span>
+                    <span className="rounded-full border border-neutral-700 px-4 py-2 text-neutral-300">
+                      Publiek beschikbaar ontwerp
+                    </span>
+                  </div>
+                </div>
+
+                <div className="mt-8 rounded-2xl border border-neutral-800 bg-neutral-950 p-4">
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                    Rol van Modro Design
+                  </p>
+                  <p className="mt-3 text-neutral-300">{project.role}</p>
+                </div>
+              </div>
+            </article>
           ))}
         </div>
       </section>
