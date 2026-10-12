@@ -55,9 +55,18 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-neutral-950 text-white">
       <header className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-        <a href="#" className="text-lg font-bold tracking-widest">
-          MODRO DESIGN
+        <a href="/" aria-label="Modro Design - Home">
+          <img
+            src="/logos/modro design_white_1026.svg"
+            alt="Modro Design"
+            style={{
+              height: "144px",
+              width: "auto",
+              display: "block",
+            }}
+          />
         </a>
+
 
         <nav className="hidden items-center gap-8 text-sm text-neutral-300 md:flex">
           <a href="#diensten" className="hover:text-white">
@@ -302,14 +311,19 @@ export default function Home() {
         className="mx-auto flex max-w-7xl flex-col gap-8 border-t border-neutral-800 px-6 py-10 md:flex-row md:items-center md:justify-between"
       >
         <div>
-          <p className="font-bold tracking-widest">MODRO DESIGN</p>
-          <p className="mt-2 text-neutral-400">
-            3D-printing | Custom design | Prototypes | Functionele onderdelen
-          </p>
+          <img
+            src="/logos/modro design_white_1026.svg"
+            alt="Modro Design"
+            style={{
+              height: "92px",
+              width: "auto",
+              display: "block",
+            }}
+          />
         </div>
 
         <div className="text-sm leading-7 text-neutral-400">
-          <p>Regio Antwerpen / Hove</p>
+          <p>Regio Antwerpen</p>
           <p>info@modrodesign.be</p>
           <p>+32 471 05 71 01</p>
           <p>BE1039.665.202</p>
